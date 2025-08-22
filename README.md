@@ -18,3 +18,12 @@ Each student starts with **$4000**, and an **Admin** can log in to add or subtra
 ---
 
 ## 📂 Project Structure
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/student-balance-app.git
+   cd student-balance-app
