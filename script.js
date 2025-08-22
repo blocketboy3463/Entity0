@@ -1,50 +1,43 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f4f4f9;
-  margin: 0;
-  padding: 20px;
+let balances = {
+  alex: 4000,
+  jayren: 4000
+};
+
+function login() {
+  const password = document.getElementById("admin-password").value;
+  const message = document.getElementById("login-message");
+  
+  if (password === "admin") {
+    document.getElementById("admin-login").style.display = "none";
+    document.getElementById("admin-panel").style.display = "block";
+  } else {
+    message.textContent = "Incorrect password!";
+    message.style.color = "red";
+  }
 }
 
-h1 {
-  margin-bottom: 20px;
+function updateBalances() {
+  document.getElementById("alex-balance").textContent = balances.alex;
+  document.getElementById("jayren-balance").textContent = balances.jayren;
 }
 
-.students {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
+function addMoney() {
+  const student = document.getElementById("student-select").value;
+  const amount = parseInt(document.getElementById("amount").value);
+  if (!isNaN(amount) && amount > 0) {
+    balances[student] += amount;
+    updateBalances();
+  }
 }
 
-.student-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  width: 180px;
+function removeMoney() {
+  const student = document.getElementById("student-select").value;
+  const amount = parseInt(document.getElementById("amount").value);
+  if (!isNaN(amount) && amount > 0) {
+    balances[student] -= amount;
+    updateBalances();
+  }
 }
 
-.admin-login, .admin-panel {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-.admin-login input, 
-.admin-panel input, 
-.admin-panel select {
-  width: 90%;
-  padding: 8px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-around;
-}
+// Initialize balances on load
+updateBalances();
