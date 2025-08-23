@@ -25,5 +25,4 @@ Each student starts with **$4000**, and an **Admin** can log in to add or subtra
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/student-balance-app.git
-   cd student-balance-app
+   git Clone the index.html and add it to a txt file and add teh text and then turn the .txt file to .html
